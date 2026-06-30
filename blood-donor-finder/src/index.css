@@ -1,0 +1,177 @@
+:root {
+  --color-bg: #faf7f2;
+  --color-surface: #ffffff;
+  --color-text: #1f2421;
+  --color-text-muted: #6b6f6c;
+  --color-urgent: #c0392b;
+  --color-urgent-dark: #8e2a1f;
+  --color-trust: #0f6e56;
+  --color-trust-light: #e1f5ee;
+  --color-border: #e4dfd6;
+  --radius: 14px;
+  --font-display: 'Manrope', sans-serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.app-shell {
+  max-width: 480px;
+  margin: 0 auto;
+  min-height: 100vh;
+  background: var(--color-surface);
+  display: flex;
+  flex-direction: column;
+}
+
+.page {
+  flex: 1;
+  padding: 24px 20px 40px;
+}
+
+.field {
+  margin-bottom: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.field label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-text-muted);
+}
+
+input,
+select {
+  font-family: var(--font-body);
+  font-size: 16px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid var(--color-border);
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+input:focus,
+select:focus,
+button:focus-visible {
+  outline: 2px solid var(--color-trust);
+  outline-offset: 1px;
+}
+
+button {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 15px;
+  padding: 14px 18px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn-urgent {
+  background: var(--color-urgent);
+  color: #fff;
+}
+.btn-urgent:hover:not(:disabled) {
+  background: var(--color-urgent-dark);
+}
+
+.btn-trust {
+  background: var(--color-trust);
+  color: #fff;
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+}
+
+.card {
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 16px;
+  margin-bottom: 12px;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: var(--color-trust-light);
+  color: var(--color-trust);
+}
+
+.status-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.home-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* Signature: a heartbeat line that draws itself once, on the home screen */
+.pulse-line polyline {
+  stroke-dasharray: 400;
+  stroke-dashoffset: 400;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .pulse-line polyline {
+    animation: draw 2.4s ease-in-out infinite;
+  }
+  .pulse-dot {
+    animation: pulse 1.8s ease-in-out infinite;
+  }
+}
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(0.85);
+  }
+}
