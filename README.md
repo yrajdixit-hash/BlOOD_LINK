@@ -1,5 +1,5 @@
 BloodLink — starter scaffold
-A simple operational prototype for a blood donor finder for a nearby location. No backend server to run — Firebase pushes auth, data and real time updates directly from the browser. The architecture is designed for a 24-48 hour hackathon: matching is done on the client (so no Cloud Functions required for the demo), and the donors/requesters receive an anonymous identity immediately without having to log in.
+A simple operational prototype for a blood donor finder for a nearby location. No backend server to run — Firebase pushes auth, data and real time updates directly from the browser. matching is done on the client (so no Cloud Functions required for the demo), and the donors/requesters receive an anonymous identity immediately without having to log in.
 
 What's already built
 The procedure is to click on 'Home — request blood' or 'Become a donor'.The process is 'Home — request blood' or 'Become a donor'.
